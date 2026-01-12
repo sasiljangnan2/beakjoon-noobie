@@ -10,6 +10,7 @@ int compare(const void* a, const void* b)
 }
 void dfs(int m, int n, int count)
 {
+	int num = 0;
 	if (count == n)
 	{
 		for (int i = 0; i < n; i++)
@@ -21,11 +22,12 @@ void dfs(int m, int n, int count)
 	}
 	for (int i = 1; i <= m; i++)
 	{
-		if (check[i] == 0)
+		if (check[i] == 0 && num != temp[i-1])
 		{
+			
 			check[i] = 1;
+			num = temp[i - 1];
 			arr[count] = temp[i - 1];
-			check[i] = 1;
 			dfs(m, n, count + 1);
 			check[i] = 0;
 		}
