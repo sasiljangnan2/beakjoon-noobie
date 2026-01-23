@@ -22,7 +22,7 @@ void init(graphtype* g)
 	for (int i = 0; i < MAX_Vertices; i++) g->adj_list[i] = NULL;
 }
 
-void insertvertex(graphtype* g, int v)
+void insertvertex(graphtype* g)
 {
 	if (((g->n) + 1) > MAX_Vertices)
 	{
@@ -67,7 +67,7 @@ int main(void)
 	g = (graphtype*)malloc(sizeof(graphtype));
 	init(g);
 	scanf("%d", &N);
-	for (int i = 0; i < N; i++) insertvertex(g, i);
+	for (int i = 0; i < N; i++) insertvertex(g);
 	for (i = 0; i < N-1; i++)
 	{
 		scanf("%d %d", &u, &v);
